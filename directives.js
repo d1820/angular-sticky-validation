@@ -52,6 +52,7 @@ function seSubmit($parse) {
 
           //$fieldInvalid is a custom property set be be used when testing for errors. We use this instead of $invalid so we can use sticky state for errors occuring. 
           //This short circuts angualrs dynamic validation state so anything using this variable will stay "on" even if the user types something in the input that makes the state valid
+          //This (_.keys(cntlValue.$error).length > 0 is done because angular removes all $error objects if no errors exist. so we want to explictly ensure no errors are there even if $invalid is still true, due to lifecycle issues
           cntlValue.$fieldInvalid = cntlValue.$invalid && (_.keys(cntlValue.$error).length > 0);
         });
 
