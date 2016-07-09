@@ -1,0 +1,28 @@
+<form name="cntrl.form" se-submit="cntrl.submit()" novalidate>
+    <div class="form-group">
+        <label for="badgenumber" ng-class="{'has-error':cntrl.hasError('badgenumber')}">Badge Number <span class="required"></span></label>
+        <input ng-model="cntrl.BadgeNumber" class="form-control" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+            name="badgenumber" id="badgenumber" ng-model-options="{updateOn: 'submit'}"   required ng-class="{'input-box-error':cntrl.hasError('badgenumber')}">
+        <div ng-messages="cntrl.form.badgenumber.$error" ng-if="cntrl.hasError('badgenumber')">
+            <div ng-message="stickypattern" class="has-error">
+                Invalid Badge Number
+            </div>
+            <div ng-message="stickyrequired" class="has-error">
+                Badge Number must be provided
+            </div>
+        </div>
+
+         <div ng-messages="cntrl.form.badgenumber.$error" >
+            <div ng-message="pattern" class="has-error">
+                Regular Angular Dynamic Invalid Badge Number
+            </div>
+            <div ng-message="required" class="has-error">
+                Regular Angular Dynamic  Badge Number must be provided
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="search_btn">Submit</button>
+    </div>
+    </div>
+</form>
