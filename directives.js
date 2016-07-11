@@ -12,7 +12,7 @@ function seSubmit($parse) {
     require: "form",
     link: function (scope, formElement, attributes, formController) {
 
-      const fn = $parse(attributes.rcSubmit);
+      const fn = $parse(attributes.seSubmit);
 
       //here we hijack the submit and do the setup for sticky state errors
       formElement.bind("submit", function (event) {
