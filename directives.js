@@ -20,7 +20,7 @@ function seSubmit($parse) {
         const matcherprefix = "sticky";
 
         //here we get all the model controller object that are apart of the form
-        const models = _.filter(self.form, (obj) => {
+        const models = _.filter(formController, (obj) => {
           return typeof obj === "object" && obj.hasOwnProperty("$modelValue");
         });
 
